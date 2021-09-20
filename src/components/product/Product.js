@@ -7,9 +7,16 @@ const Product = (props) => {
         <div className={styles.product} onClick={props.click}>
             <p>product #{props.product.id} : {props.product.name}</p>
             <p>{props.product.price}</p>
-            <button className={`${styles.button} ${styles.incBtn}`} onClick={props.onDec}>{props.product.quantity > 1 ? "-" : <BiTrash/> }</button>
+            <button 
+                onClick={props.onDec}
+                className={`${styles.button} ${
+                    props.product.quantity == 1 && styles.remove
+                }`} 
+            >
+                {props.product.quantity > 1 ? "-" : <BiTrash/> }
+            </button>
             <span className={styles.value}>{props.product.quantity}</span>
-            <button className={`${styles.button} ${styles.incBtn}`} onClick={props.onInc}>+</button>
+            <button className={`${styles.button}`} onClick={props.onInc}>+</button>
             {props.children}
             <input value={props.product.name} onChange={props.onChange}/>
             <button className={`${styles.button} ${styles.delBtn}`} onClick={props.onDelete}>Delete</button>

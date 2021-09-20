@@ -22,3 +22,8 @@
   color: royalblue;
   border: 1px solid royalblue;
 }
+.remove {
+  color: rgb(238, 78, 78);
+  border: 1px solid rgb(238, 78, 78);
+  background-color: #fff;
+}
