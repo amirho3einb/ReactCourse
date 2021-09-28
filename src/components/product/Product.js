@@ -1,25 +1,24 @@
 import styles from './product.module.css';
 import { BiTrash } from "react-icons/bi";
 
-const Product = (props) => {
-    console.log(props);
+const Product = ({product,onDec,onInc,onChange,onDelete,onClick,children}) => {
     return(
-        <div className={styles.product} onClick={props.click}>
-            <p>product #{props.product.id} : {props.product.name}</p>
-            <p>{props.product.price}</p>
+        <div className={styles.product}>
+            <p>product #{product.id} : {product.name}</p>
+            <p>{product.price}</p>
             <button 
-                onClick={props.onDec}
+                onClick={onDec}
                 className={`${styles.button} ${
-                    props.product.quantity == 1 && styles.remove
+                    product.quantity === 1 && styles.remove
                 }`} 
             >
-                {props.product.quantity > 1 ? "-" : <BiTrash/> }
+                {product.quantity > 1 ? "-" : <BiTrash/> }
             </button>
-            <span className={styles.value}>{props.product.quantity}</span>
-            <button className={`${styles.button}`} onClick={props.onInc}>+</button>
-            {props.children}
-            <input value={props.product.name} onChange={props.onChange}/>
-            <button className={`${styles.button} ${styles.delBtn}`} onClick={props.onDelete}>Delete</button>
+            <span className={styles.value}>{product.quantity}</span>
+            <button className={`${styles.button}`} onClick={onInc}>+</button>
+            {children}
+            <input value={product.name} onChange={onChange}/>
+            <button className={`${styles.button} ${styles.delBtn}`} onClick={onDelete}>Delete</button>
         </div>
     )
 };
