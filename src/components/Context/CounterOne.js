@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { CounterContext , CounterContextDispatcher } from "./CounterProvider";
+import { useCount , useCountAction } from "./CounterProvider";
 const CounterOne = () => {
-    const count = useContext(CounterContext);
-    const setCount = useContext(CounterContextDispatcher);
+    const count = useCount();
+    const setCount = useCountAction();
     console.log("CounterOne" + count);
     return ( 
         <div>
