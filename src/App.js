@@ -93,12 +93,12 @@ class App extends Component {
     render(){
         return(
             <>
-            <CounterReducerTwo />
+            {/* <CounterReducerTwo /> */}
             {/* <CounterReducer /> */}
-            {/* <CounterProvider>
+            <CounterProvider>
                 <p>welocome to my App</p>
                 <CounterOne />
-            </CounterProvider> */}
+            </CounterProvider>
             </>
             // <div className="container" id="title">
             //     <NavBar totalItems={this.state.Products.filter((p) => p.quantity > 0).length}/>

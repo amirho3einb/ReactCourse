@@ -20,12 +20,13 @@ const reducer = (state, action) => {
     }
 };
 
+
 const CounterReducer = () => {
     // 1. useState = > state managment
     // 2. reduce
 
     // steps: 
-    // 1. import usrReducer()
+    // 1. import useReducer()
     // 2. useReducer(reducer,initialState);
     // 3. return : [count,dispatch]
     // 4. reducer(state,action)
