@@ -8,6 +8,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import CounterProvider from "./components/Context/CounterProvider";
 import CounterOne from "./components/Context/CounterOne";
+import CounterReducer from "./components/Reducer/CounterReducer";
 class App extends Component {
     state = {
         Products: [
@@ -90,10 +91,11 @@ class App extends Component {
     render(){
         return(
             <>
-            <CounterProvider>
+            <CounterReducer />
+            {/* <CounterProvider>
                 <p>welocome to my App</p>
                 <CounterOne />
-            </CounterProvider>
+            </CounterProvider> */}
             </>
             // <div className="container" id="title">
             //     <NavBar totalItems={this.state.Products.filter((p) => p.quantity > 0).length}/>
