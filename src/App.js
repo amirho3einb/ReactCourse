@@ -9,6 +9,8 @@ import NavBar from "./components/NavBar/NavBar";
 import CounterProvider from "./components/Context/CounterProvider";
 import CounterOne from "./components/Context/CounterOne";
 import CounterReducer from "./components/Reducer/CounterReducer";
+import CounterReducerTwo from "./components/Reducer/CounterReducerTwo";
+
 class App extends Component {
     state = {
         Products: [
@@ -91,7 +93,8 @@ class App extends Component {
     render(){
         return(
             <>
-            <CounterReducer />
+            <CounterReducerTwo />
+            {/* <CounterReducer /> */}
             {/* <CounterProvider>
                 <p>welocome to my App</p>
                 <CounterOne />
