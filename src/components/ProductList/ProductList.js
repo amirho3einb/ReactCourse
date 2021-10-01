@@ -4,17 +4,17 @@ import { useProducts, useProductsAction } from '../Provider/ProductsProvider';
 
 const ProductList = (props) => {
     const products = useProducts();
-    const {removeHandler , incHandler, decHandler, changeHandler} = useProductsAction();
+    const dispatch = useProductsAction();
     const renderHandler = () => {
         if(products.length === 0)
             return <div>your shopping bsket is empty!!!</div>
         return products.map((product) => {
                     return <Product
                         product={product}
-                        onChange={(e)=> changeHandler(e,product.id)} 
-                        onDelete={() => removeHandler(product.id)} 
-                        onInc={() => incHandler(product.id)} 
-                        onDec={() => decHandler(product.id)}
+                        onChange={(e)=> dispatch({type: "edit" , id: product.id, event: e})} 
+                        onDelete={() => dispatch({type: "remove" , id: product.id })} 
+                        onInc={() => dispatch({type: "increament" , id: product.id })} 
+                        onDec={() => dispatch({type: "decrement" , id: product.id })}
                         />
             })
                 
