@@ -22,4 +22,5 @@ const Product = ({product,onDec,onInc,onChange,onDelete,onClick,children}) => {
         </div>
     )
 };
+
 export default Product;
