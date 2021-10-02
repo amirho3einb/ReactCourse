@@ -1,15 +1,16 @@
 import React, { useState , useContext } from 'react';
 import { useReducer } from 'react/cjs/react.development';
+import {productData} from "../../db/products";
 
 const productContext = React.createContext();
 const productContextDispatcher = React.createContext();
 
-const initialState = [
-    {id: "1", name: "book 1", price: "390 $", quantity: 1},
-    {id: "2", name: "poco m3 64gig", price: "1000 $",quantity: 3},
-    {id: "3", name: "Hailo GT1 XR", price: "200 $", quantity: 9},
-    {id: "4", name: "Samsung S20 Ultra", price: "150 $", quantity: 4}
-];
+// const initialState = [
+//     {id: "1", name: "book 1", price: "390 $", quantity: 1},
+//     {id: "2", name: "poco m3 64gig", price: "1000 $",quantity: 3},
+//     {id: "3", name: "Hailo GT1 XR", price: "200 $", quantity: 9},
+//     {id: "4", name: "Samsung S20 Ultra", price: "150 $", quantity: 4}
+// ];
 const reducer = (state, action) => {
     switch (action.type){
         case "increament":{
@@ -50,15 +51,20 @@ const reducer = (state, action) => {
             const filterdProducts = state.filter((p)=>p.id !== action.id);
             return filterdProducts;
         }
+        case "filter":{
+            console.log(action.event.target.value);
+            return state;
+        }
         default:
             return state;
     }
 };
 
 
+
 const ProductsProvider = ({children}) => {
     // const[count,setCount] = useState(4);
-    const [products, dispatch] = useReducer(reducer, initialState);
+    const [products, dispatch] = useReducer(reducer, productData);
 
 
     return ( 

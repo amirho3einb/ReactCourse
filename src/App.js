@@ -11,6 +11,7 @@ import CounterOne from "./components/Context/CounterOne";
 import CounterReducer from "./components/Reducer/CounterReducer";
 import CounterReducerTwo from "./components/Reducer/CounterReducerTwo";
 import ProductsProvider from "./components/Provider/ProductsProvider";
+import Filter from "./components/Filter/Filter";
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
          <ProductsProvider>
             <div className="container" id="title">
                 <NavBar /> 
+                <Filter />
                 <ProductList
                 />
             </div>
