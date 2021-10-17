@@ -1,0 +1,21 @@
+.mainRowFilters{
+    display: flex;
+    align-items: center;
+    width: 50rem;
+    margin: 0 auto;
+    color: royalblue;
+    justify-content: space-between;
+}
+.mainRowFilters p {
+    margin-right: 10px;
+}
+.filterSelect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.filterSelect > *{
+    width: 100px;
+    margin: 0 10px;
+}
