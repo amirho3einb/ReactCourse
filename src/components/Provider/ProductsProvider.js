@@ -36,8 +36,7 @@ const reducer = (state, action) => {
                 updatedProducts[index] = product;
                 return updatedProducts;
             }
-        }
-            
+        }    
         case "edit":{
             const index = state.findIndex((item) => item.id === action.id);
             const product = { ...state[index] };
@@ -45,8 +44,7 @@ const reducer = (state, action) => {
             const updatedProducts = [...state];
             updatedProducts[index] = product;
             return updatedProducts; 
-        }
-           
+        }   
         case "remove":{
             const filterdProducts = state.filter((p)=>p.id !== action.id);
             return filterdProducts;
@@ -109,12 +107,9 @@ const reducer = (state, action) => {
     }
 };
 
-
-
 const ProductsProvider = ({children}) => {
     // const[count,setCount] = useState(4);
     const [products, dispatch] = useReducer(reducer, productData);
-
 
     return ( 
         <productContext.Provider value={products}>
