@@ -92,6 +92,18 @@ const reducer = (state, action) => {
                 return sortedProducts;
             }
         }
+        case "search": {
+            const value = action.event.target.value;
+            if(value === ""){
+                return productData;
+            }
+            else{
+                const filterdProducts = productData.filter((p) => 
+                    p.title.toLowerCase().includes(value.toLowerCase())
+                );
+                return filterdProducts;
+            }
+        }
         default:
             return state;
     }
