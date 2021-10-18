@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useProductsAction } from "../Provider/ProductsProvider";
 import Select from 'react-select';
 import styles from "./Filter.module.css";
+import SelectComponent from "../../common/Select/Select";
 
 
 const Filter = () => {
@@ -37,22 +38,34 @@ const Filter = () => {
     return ( 
         <div className={styles.mainRowFilters}>
             <p>filter produts based on:</p>
-            <div className={styles.filterSelect}>
+            <SelectComponent 
+                title = "filter by size"
+                value={value}
+                onChange={changeHandler}
+                options={options}
+            />
+            {/* <div className={styles.filterSelect}>
                 order by
                 <Select
                     value={value}
                     onChange={changeHandler}
                     options={options}
                 />
-            </div>
-            <div className={styles.filterSelect}>
+            </div> */}
+            <SelectComponent
+                title= "filter by price"
+                value={sort}
+                onChange={sortHandler}
+                options={sortOptions}
+            />
+            {/* <div className={styles.filterSelect}>
                 Sort by Price
                 <Select
                     value={sort}
                     onChange={sortHandler}
                     options={sortOptions}
                 />
-            </div>
+            </div> */}
         </div>
      );
 }

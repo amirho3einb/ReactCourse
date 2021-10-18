@@ -1,0 +1,10 @@
+.filterSelect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.filterSelect > * {
+  width: 100px;
+  margin: 0 10px;
+}
